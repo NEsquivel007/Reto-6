@@ -1,0 +1,251 @@
+  :root {
+            --bg: #000000;
+            --panel: #1c1c1c;
+            --panel-dark: #111111;
+            --panel-deep: #0a0a0a;
+            --white: #ffffff;
+            --text: #f0f0f0;
+            --muted: #a8a8a8;
+            --border: #4d4d4d;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            margin: 0;
+            background:
+                radial-gradient(ellipse at 50% -10%, #1a1a1a 0%, transparent 55%), var(--bg);
+            color: var(--text);
+            font-family: Georgia, 'Iowan Old Style', serif;
+            padding: 40px 20px 60px;
+        }
+
+        h1 {
+            font-size: 1.9rem;
+            margin: 0 0 6px;
+            font-weight: 400;
+            letter-spacing: .4px;
+            text-align: center;
+            color: var(--white);
+            text-shadow: 0 2px 10px rgba(255, 255, 255, .15)
+        }
+
+        .hr {
+            width: 64px;
+            height: 2px;
+            background: var(--white);
+            margin: 0 auto 16px;
+            opacity: .5
+        }
+
+        .sub {
+            color: var(--muted);
+            margin: 0 auto 30px;
+            font-size: .94rem;
+            max-width: 56ch;
+            text-align: center;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.55
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            max-width: 1080px;
+            margin: 0 auto
+        }
+
+        @media(max-width:800px) {
+            .grid {
+                grid-template-columns: 1fr
+            }
+        }
+
+        .card {
+            background: linear-gradient(165deg, var(--panel), var(--panel-dark));
+            border: 1px solid var(--border);
+            padding: 20px 22px;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            box-shadow: 0 14px 30px -12px rgba(0, 0, 0, .85), inset 0 1px 0 rgba(255, 255, 255, .06);
+        }
+
+        .card:nth-of-type(1) {
+            border-radius: 4px 18px 4px 18px
+        }
+
+        .card:nth-of-type(2) {
+            border-radius: 18px 4px 18px 4px
+        }
+
+        .card:nth-of-type(3) {
+            border-radius: 8px
+        }
+
+        .card:nth-of-type(4) {
+            border-radius: 8px
+        }
+
+        .card h2 {
+            font-size: 1.05rem;
+            margin: 0 0 8px;
+            color: var(--white);
+            font-weight: 600;
+            font-family: Georgia, serif;
+            letter-spacing: .2px
+        }
+
+        .card .sub {
+            color: #cfcfcf;
+            margin: 0 0 14px;
+            font-size: .85rem;
+            text-align: left;
+            max-width: none
+        }
+
+        label {
+            font-size: .78rem;
+            color: #cfcfcf;
+            display: block;
+            margin: 8px 0 4px
+        }
+
+        input,
+        button {
+            font-family: inherit;
+            font-size: .9rem
+        }
+
+        input {
+            width: 100%;
+            background: var(--panel-deep);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            color: var(--text);
+            padding: 8px 10px
+        }
+
+        input:focus {
+            outline: 2px solid var(--white);
+            outline-offset: 1px
+        }
+
+        button {
+            background: transparent;
+            border: 1px solid var(--white);
+            color: var(--white);
+            padding: 9px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 10px 6px 0 0;
+            font-weight: 600;
+            transition: background .15s, color .15s
+        }
+
+        button:hover:not(:disabled) {
+            background: var(--white);
+            color: #000
+        }
+
+        button:disabled {
+            opacity: .35;
+            cursor: not-allowed
+        }
+
+        .mono {
+            font-family: Consolas, 'Courier New', monospace;
+            font-size: .82rem;
+            word-break: break-all;
+            color: #fff
+        }
+
+        .kv {
+            display: flex;
+            justify-content: space-between;
+            gap: 8px;
+            padding: 5px 0;
+            border-bottom: 1px solid #ffffff1a;
+            font-size: .85rem
+        }
+
+        .kv b {
+            color: var(--white)
+        }
+
+        .log {
+            background: var(--panel-deep);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 10px;
+            max-height: 260px;
+            overflow-y: auto;
+            font-family: Consolas, monospace;
+            font-size: .76rem;
+            line-height: 1.6;
+            color: #dcdcdc;
+            box-shadow: inset 0 2px 8px rgba(0, 0, 0, .6)
+        }
+
+        .log div {
+            padding: 2px 0;
+            border-bottom: 1px solid #ffffff10
+        }
+
+        .tag {
+            color: #000;
+            background: #e8e8e8;
+            border-radius: 3px;
+            padding: 0 5px;
+            margin-right: 6px;
+            font-size: .7rem;
+            font-weight: 600
+        }
+
+        .tag.mod {
+            background: #b8b8b8
+        }
+
+        .tag.carry {
+            background: #d0d0d0
+        }
+
+        .tag.halt {
+            background: #fff
+        }
+
+        .verify {
+            margin-top: 12px;
+            padding: 12px;
+            border-radius: 4px;
+            font-weight: 600;
+            text-align: center;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, .06)
+        }
+
+        .verify.ok {
+            background: #fff;
+            color: #000;
+            border: 1px solid #fff
+        }
+
+        .verify.pending {
+            background: var(--panel-deep);
+            color: #cfcfcf
+        }
+
+        .full {
+            grid-column: 1/-1
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--panel-deep);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 2px 8px;
+            font-size: .72rem;
+            color: #cfcfcf
+        }
